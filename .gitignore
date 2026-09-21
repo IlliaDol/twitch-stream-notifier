@@ -1,0 +1,21 @@
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated archives and build output
+dist/
+build/
+*.zip
+
+# Dependency caches if tooling is added later
+node_modules/
+npm-debug.log*

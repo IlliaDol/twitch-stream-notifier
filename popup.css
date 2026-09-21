@@ -1,0 +1,280 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 340px;
+  min-height: 420px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0e0e10;
+  color: #efeff1;
+  padding: 16px;
+}
+
+header {
+  margin-bottom: 14px;
+  border-bottom: 1px solid #303032;
+  padding-bottom: 10px;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* --- add section --- */
+.add-section {
+  margin-bottom: 14px;
+}
+
+.input-row {
+  display: flex;
+  gap: 6px;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #464648;
+  border-radius: 6px;
+  background: #18181b;
+  color: #efeff1;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input-row input:focus {
+  border-color: #9147ff;
+}
+
+.input-row input::placeholder {
+  color: #75757a;
+}
+
+.input-row button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  background: #9147ff;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.input-row button:hover {
+  background: #772ce8;
+}
+
+.error {
+  color: #eb0400;
+  font-size: 12px;
+  margin-top: 6px;
+  padding-left: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- streamer list --- */
+.streamer-list-section {
+  margin-bottom: 14px;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.list-header h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #adadb8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#count {
+  font-size: 12px;
+  background: #303032;
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: #adadb8;
+}
+
+#streamerList {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#streamerList::-webkit-scrollbar {
+  width: 4px;
+}
+
+#streamerList::-webkit-scrollbar-thumb {
+  background: #464648;
+  border-radius: 4px;
+}
+
+.empty-state {
+  color: #75757a;
+  font-size: 13px;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.streamer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  background: #18181b;
+  transition: background 0.15s;
+}
+
+.streamer-item:hover {
+  background: #1f1f23;
+}
+
+.streamer-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.streamer-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.streamer-name {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.streamer-status {
+  font-size: 11px;
+  color: #adadb8;
+}
+
+.live-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #eb0400;
+  margin-right: 4px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #75757a;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.remove-btn:hover {
+  color: #eb0400;
+  background: rgba(235, 4, 0, 0.1);
+}
+
+/* --- controls --- */
+.controls {
+  border-top: 1px solid #303032;
+  padding-top: 12px;
+  margin-bottom: 12px;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #adadb8;
+}
+
+.toggle-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #9147ff;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #75757a;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.online {
+  background: #00f593;
+}
+
+.status-dot.offline {
+  background: #75757a;
+}
+
+/* --- footer --- */
+footer {
+  border-top: 1px solid #303032;
+  padding-top: 10px;
+}
+
+#checkNowBtn {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #464648;
+  border-radius: 6px;
+  background: transparent;
+  color: #efeff1;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+#checkNowBtn:hover {
+  background: #1f1f23;
+}
+
+#checkNowBtn:active {
+  background: #303032;
+}

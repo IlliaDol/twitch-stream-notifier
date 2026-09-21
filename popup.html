@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitch Stream Notifier</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>🔴 Twitch Stream Notifier</h1>
+  </header>
+
+  <section class="add-section">
+    <div class="input-row">
+      <input type="text" id="streamerInput" placeholder="Enter Twitch username..." maxlength="25">
+      <button id="addBtn" title="Add streamer">+</button>
+    </div>
+    <div id="addError" class="error hidden"></div>
+  </section>
+
+  <section class="streamer-list-section">
+    <div class="list-header">
+      <h2>Tracked Streamers</h2>
+      <span id="count">0</span>
+    </div>
+    <ul id="streamerList">
+      <li class="empty-state">No streamers added yet</li>
+    </ul>
+  </section>
+
+  <section class="controls">
+    <label class="toggle-label">
+      <input type="checkbox" id="notificationsToggle" checked>
+      <span>Notifications</span>
+    </label>
+    <label class="toggle-label">
+      <input type="checkbox" id="endStreamToggle" checked>
+      <span>Stream ended</span>
+    </label>
+    <div class="status-row">
+      <span id="connectionStatus" class="status-dot offline"></span>
+      <span id="statusText">Idle</span>
+    </div>
+  </section>
+
+  <footer>
+    <button id="checkNowBtn">Check Now</button>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
